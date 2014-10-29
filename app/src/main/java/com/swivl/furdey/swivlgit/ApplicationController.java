@@ -14,15 +14,21 @@ public class ApplicationController extends Application {
 
     private RequestQueue requestQueue;
     private ImageLoader imageLoader;
+    private BitmapLruCache bitmapLruCache;
 
     @Override
     public void onCreate() {
         super.onCreate();
         requestQueue = Volley.newRequestQueue(this);
-        imageLoader = new ImageLoader(requestQueue, new BitmapLruCache());
+        bitmapLruCache = new BitmapLruCache();
+        imageLoader = new ImageLoader(requestQueue, bitmapLruCache);
     }
 
     public ImageLoader getImageLoader() {
         return imageLoader;
+    }
+
+    public BitmapLruCache getBitmapLruCache() {
+        return bitmapLruCache;
     }
 }

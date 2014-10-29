@@ -62,6 +62,6 @@ public class UsersListAdapter extends CursorAdapter {
         extras.putLong(USER_ID, user.getLocalId());
         viewHolder.icon.setTag(user.getLocalId());
         viewHolder.icon.setDefaultImageResId(R.drawable.unknown_user);
-        viewHolder.icon.setImageUrl(user.getAvatarUrl(100), imageLoader);
+        viewHolder.icon.setImageUrl(user.getAvatarUrl(User.SMALL_SIZE), imageLoader);
     }
 }
