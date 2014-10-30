@@ -2,12 +2,16 @@ package com.swivl.furdey.swivlgit.content.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * User model used for parsing and storing user data
  */
-public class User {
+public class User implements Serializable {
 
     public static final int DEFAULT_SIZE = -1;
+    public static final int SMALL_SIZE = 100;
+    public static final int LARGE_SIZE = 400;
 
     private static final String AVATARS = "https://avatars.githubusercontent.com";
     private static final String AVATARS2 = "https://avatars2.githubusercontent.com";
